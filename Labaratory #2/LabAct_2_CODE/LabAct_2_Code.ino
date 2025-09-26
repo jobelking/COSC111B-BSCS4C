@@ -28,6 +28,7 @@ void loop() {
     counts++;
   }
   
+  counts = total_led-1
   while (counts >= 0) {
     if (ledPins[counts]!=9 && ledPins[counts]!=10 && ledPins[counts]!=11) {
       digitalWrite(ledPins[counts], LOW);
