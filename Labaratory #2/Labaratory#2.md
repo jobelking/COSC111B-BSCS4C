@@ -10,5 +10,6 @@
 - https://www.perplexity.ai/search/how-to-use-the-analogwrite-pro-K3RhgTOzRNO6WprCpHEqcA
 
 ## Members:
+- Bautista, Jobel King A. **LEADER**
 - Azul, Shiela Mae Ann R. **95**
 - Peralta, Carl **98**
