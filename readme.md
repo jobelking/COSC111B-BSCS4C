@@ -1,4 +1,4 @@
-# Repository for Laboratory Activity for COSC 111B
+# Repository for Laboratory Activity in COSC 111B
 
 ## Members:
 - Azul, Shiela Mae R. 
