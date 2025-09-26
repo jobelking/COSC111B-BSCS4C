@@ -13,11 +13,13 @@ void setup() {
 void loop() {
   int counts = 0;
   while (counts < total_led){
+	//checks if pin is PWM. LED ON
     if (ledPins[counts]!=9 && ledPins[counts]!=10 && ledPins[counts]!=11) {
       digitalWrite(ledPins[counts], HIGH);
       delay(1000);
     }
     else {
+		//adjust brightness of PWM pins. LED ON
       int brightness = 0;
       while (brightness <= 255) {
         analogWrite(ledPins[counts], brightness);
@@ -30,11 +32,13 @@ void loop() {
   
   counts = total_led-1;
   while (counts >= 0) {
+	  //checks if pin is PWM. LED OFF
     if (ledPins[counts]!=9 && ledPins[counts]!=10 && ledPins[counts]!=11) {
       digitalWrite(ledPins[counts], LOW);
       delay(1000);
     }
     else {
+		//adjust brightness of PWM pins. LED OFF
       int brightness = 255;
       while (brightness >= 0) {
         analogWrite(ledPins[counts], brightness);
