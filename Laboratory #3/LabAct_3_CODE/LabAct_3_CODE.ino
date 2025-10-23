@@ -2,7 +2,7 @@
 #define PHOTORESISTOR_PIN A2
 #define ALERT_PIN 12
 
-const float TEMP_THRESHOLD = 50.0; // Celsius
+const float TEMP_THRESHOLD = 40; // Celsius
 const int LIGHT_THRESHOLD = 220;
 
 void setup() {
@@ -15,8 +15,8 @@ void setup() {
 // ----------------------------------------------------------------------
 float readTemperature() {
   int analogValue = analogRead(THERMISTOR_PIN);
-  float voltage = analogValue * (5.0 / 1023.0);
-  float resistance = (5.0 - voltage) * 10000 / voltage; // 10k divider
+  float conversion = analogValue * (5.0 / 1023.0);
+  float resistance = (5.0 - conversion) * 10000 / conversion; // 10k divider
   float temperature = 1 / (log(resistance / 10000.0) / 3950 + 1 / 298.15) - 273.15;
   return temperature;
 }
@@ -25,7 +25,7 @@ float readTemperature() {
 // Function to read brightness
 // ----------------------------------------------------------------------
 int readBrightness() {
-  int brightness = analogRead(PHOTORESISTOR_PIN);
+  int brightness = analogRead(PHOTORESISTOR_PIN)*0.27;
   return brightness;
 }
 
@@ -45,9 +45,9 @@ void loop() {
   if (temperature >= TEMP_THRESHOLD && brightness >= LIGHT_THRESHOLD) {
     // Fast blink LED/buzzer
     digitalWrite(ALERT_PIN, HIGH);
-    delay(100);
+    delay(1000);
     digitalWrite(ALERT_PIN, LOW);
-    delay(100);
+    delay(1000);
   } else {
     digitalWrite(ALERT_PIN, LOW);
   }
