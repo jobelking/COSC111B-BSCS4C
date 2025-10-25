@@ -1,4 +1,4 @@
-# Labaratory #2
+# Laboratory #2
 
 ## AI Agent Used
 - Perplexity AI
