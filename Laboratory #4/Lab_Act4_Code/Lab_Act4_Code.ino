@@ -1,4 +1,3 @@
-
 #define PHOTORESISTOR_PIN A0
 #define ALERT_PIN 8
 
